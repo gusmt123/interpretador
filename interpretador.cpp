@@ -14,11 +14,21 @@ bool verifica_validade_comando(const std::string& comando)
         {
             return false;
         }
-        if(comando.substr(0, 6 ) == "repete" || comando.substr(0,2) == "se")
+        if(comando.substr(0, 7 ) == "repete " || comando.substr(0,3) == "se ")
         {
-            return true;
+            if(comando.substr(0,3) == "se ")
+            {
+                if(comando[5] != '=' && comando[5] != '>' && comando[5] != '<')
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            
         }
-        return true;
 
     }
         
