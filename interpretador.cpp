@@ -62,9 +62,21 @@ bool verifica_validade_comando(const std::string& comando)
 
                     }
 
-                    return true;
+                    
                 }
             }
+            else
+            {
+                std::cout << comando[7] <<  std::endl;
+
+                for(int i = 0; i < comando[7] - '0';i++)
+                {
+                    std::cout << comando.substr(16) << std::endl;
+                }
+
+            }
+
+            return true;
             
         }
 
