@@ -90,7 +90,11 @@ int main()
 {
 
     std::string comando;
+    std::cout << "Segue a sintax" << std::endl;
+    std::cout << "repete numero_entre_0_e_9 printa texto" << std::endl;
+    std::cout << "se numero_entre_0_e_9 =_ou_>_ou< numero_entre_0_e_9 printa texto " << std::endl;
     std::cout << "Insira um comando:" << std::endl;
+    
     std::getline(std::cin, comando);
 
     if(verifica_validade_comando(comando))
