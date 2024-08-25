@@ -9,6 +9,7 @@ bool verifica_validade_comando(const std::string& comando)
         (comando.find("se") != std::string::npos || comando.find("repete") != std::string::npos))
     {
         
+        
 
         if(comando.length() < 16)
         {
@@ -24,6 +25,43 @@ bool verifica_validade_comando(const std::string& comando)
                 }
                 else
                 {
+
+                    if(comando[3] > '9' || comando[3] < '0')
+                    {
+                        return false;
+                    }
+
+                    if(comando[7] > '9' || comando[7] < '0')
+                    {
+                        return false;
+                    }
+
+                    switch(comando[5])
+                    {
+
+                        case '=':
+                            if(comando[3] == comando[7])
+                            {
+                                std::cout << comando.substr(16);
+                            }
+                        break;
+
+                        case '>':
+                            if(comando[3] > comando[7])
+                            {
+                                std::cout << comando.substr(16);
+                            }
+                        break;
+
+                        case '<':
+                            if(comando[3] < comando[7])
+                            {
+                                std::cout << comando.substr(16);
+                            }
+                        break;
+
+                    }
+
                     return true;
                 }
             }
